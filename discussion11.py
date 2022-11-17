@@ -39,7 +39,10 @@ def create_species_table(cur, conn):
 # TASK 1
 # CREATE TABLE FOR PATIENTS IN DATABASE
 def create_patients_table(cur, conn):
-    pass
+    
+    cur.execute("DROP TABLE IF EXISTS Patients")
+    cur.execute("CREATE TABLE Patients(pet_id INTEGER PRIMARY KEY, name TEXT, species_id INTEGER, age INTEGER, cuteness INTEGER, aggressiveness INTEGER)")
+    conn.commit()
 
 
 # ADD FLUFFLE TO THE TABLE
